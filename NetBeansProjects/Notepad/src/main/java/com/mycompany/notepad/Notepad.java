@@ -6,7 +6,6 @@ package com.mycompany.notepad;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -16,8 +15,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
@@ -314,7 +311,7 @@ public class Notepad extends javax.swing.JFrame {
         chooser.setFileFilter(filter);
         int returnVal = chooser.showOpenDialog(this);
         if(returnVal == JFileChooser.APPROVE_OPTION){
-            File file = chooser.getSelectedFile();
+            file = chooser.getSelectedFile();
             try{
                openFile(file);
             }catch(IOException ex){
@@ -343,6 +340,7 @@ public class Notepad extends javax.swing.JFrame {
     private void save(){
           try{
                saveFile(file);
+               modified = false;
             }catch(IOException ex){
                 JOptionPane.showMessageDialog(this, "Error loading File");
             }

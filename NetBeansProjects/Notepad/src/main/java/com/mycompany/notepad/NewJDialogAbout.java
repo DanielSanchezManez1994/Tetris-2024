@@ -16,6 +16,7 @@ public class NewJDialogAbout extends javax.swing.JDialog {
     public NewJDialogAbout(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -32,6 +33,7 @@ public class NewJDialogAbout extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jTextPane1.setEditable(false);
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("properties/Bundle_en_GB"); // NOI18N
         jTextPane1.setText(bundle.getString("Notepad.About.dialogue")); // NOI18N
         jScrollPane1.setViewportView(jTextPane1);
