@@ -20,6 +20,7 @@ public class ScoreBoard extends javax.swing.JPanel implements ScoreInterface{
     public ScoreBoard() {
         initComponents();
         score = 0;
+        
     }
 
     public void incrementScore(){
